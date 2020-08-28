@@ -1,19 +1,32 @@
 package cn.edu.guet.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu implements Serializable {
-
+public class Menus {
     private String id;
     private String pId;
     private String name;
-    private String icon;
+    private String Icon;
     private String url;
+    private Menus parentMenu;
+    private List<Menus> childMenus=new ArrayList<Menus>();
 
-    private Menu parentMenu;
-    private List<Menu> childMenus=new ArrayList<Menu>();
+    public Menus getParentMenu() {
+        return parentMenu;
+    }
+
+    public void setParentMenu(Menus parentMenu) {
+        this.parentMenu = parentMenu;
+    }
+
+    public List<Menus> getChildMenus() {
+        return childMenus;
+    }
+
+    public void setChildMenus(List<Menus> childMenus) {
+        this.childMenus = childMenus;
+    }
 
     public String getId() {
         return id;
@@ -40,11 +53,11 @@ public class Menu implements Serializable {
     }
 
     public String getIcon() {
-        return icon;
+        return Icon;
     }
 
     public void setIcon(String icon) {
-        this.icon = icon;
+        Icon = icon;
     }
 
     public String getUrl() {
@@ -53,21 +66,5 @@ public class Menu implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Menu getParentMenu() {
-        return parentMenu;
-    }
-
-    public void setParentMenu(Menu parentMenu) {
-        this.parentMenu = parentMenu;
-    }
-
-    public List<Menu> getChildMenus() {
-        return childMenus;
-    }
-
-    public void setChildMenus(List<Menu> childMenus) {
-        this.childMenus = childMenus;
     }
 }

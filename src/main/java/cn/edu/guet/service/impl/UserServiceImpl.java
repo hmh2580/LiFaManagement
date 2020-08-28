@@ -4,7 +4,9 @@ import cn.edu.guet.mapper.UserMapper;
 import cn.edu.guet.model.User;
 import cn.edu.guet.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements IUserService {
 
     @Autowired
